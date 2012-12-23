@@ -13,21 +13,21 @@ python-setuptools autoconf
 echo 'Download Node.js - v. 0.8.1'
 mkdir /tmp/node-install
 cd /tmp/node-install
-wget http://nodejs.org/dist/v0.8.1/node-v0.8.1.tar.gz
-tar -zxf node-v0.8.1.tar.gz
+wget http://nodejs.org/dist/v0.8.16/node-v0.8.16.tar.gz
+tar -zxf node-v0.8.*.tar.gz
 echo 'Node.js download & unpack completed'
 # Install Node.js
 echo 'Install Node.js'
-cd node-v0.8.1
-./configure && make && checkinstall --install=yes --pkgname=nodejs --pkgversion "0.6.15" --default
+cd node-v0.8.*
+./configure && make && checkinstall --install=yes --pkgname=nodejs --pkgversion "0.8.16" --default
 echo 'Node.js install completed'
 # Install Redis
 echo 'Install Redis'
 cd /tmp
 mkdir redis && cd redis
-wget http://redis.googlecode.com/files/redis-2.4.15.tar.gz
-tar -zxf redis-2.4.15.tar.gz
-cd redis-2.4.15
+wget http://redis.googlecode.com/files/redis-2.6.7.tar.gz
+tar -zxf redis-2.*.*.tar.gz
+cd redis-2.*.*
 make && make install
 wget https://github.com/ijonas/dotfiles/raw/master/etc/init.d/redis-server
 wget https://github.com/ijonas/dotfiles/raw/master/etc/redis.conf
